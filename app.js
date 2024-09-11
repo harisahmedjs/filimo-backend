@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
+const settingsRouter = require('./routes/settings');
 const authRouter = require('./routes/auth');
 const coursesRouter = require('./routes/course');
 const lessonRouter = require('./routes/lesson');
@@ -20,7 +21,8 @@ app.use(cors('*'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/storage', express.static('/app/storage'));
 
-app.use('/subscriptions', subscriptionRouter)
+app.use('/settings', settingsRouter);
+app.use('/subscriptions', subscriptionRouter);
 app.use('/auth', authRouter);
 app.use('/courses', coursesRouter);
 app.use('/quizzes', quizRouter);
