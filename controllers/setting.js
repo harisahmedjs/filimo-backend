@@ -1,4 +1,4 @@
-const Settings = require('../models/settings');
+const Settings = require('../models/setting');
 
 exports.hideSummerCourses = async (req, res) => {
   try {
